@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @ticket.name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @ticket.category %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @ticket.date %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @ticket.time %>
+</p>
+
+<p>
+  <b>Place:</b>
+  <%= @ticket.place %>
+</p>
+
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>

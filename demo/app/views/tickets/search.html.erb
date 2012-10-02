@@ -1,0 +1,31 @@
+<br>
+<h1>Tickets about <%= @query_string %></h1>
+
+<table>
+  <tr>
+    <th><%= sortable params[:query], "name", "Name" %></th>
+    <th><%= sortable params[:query], "category", "Category" %></th>
+    <th><%= sortable params[:query], "date", "Date" %></th>
+    <th><%= sortable params[:query], "time", "Time" %></th>
+    <th><%= sortable params[:query], "place", "Place" %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tickets.each do |ticket| %>
+  <tr>
+    <td><%= ticket.name %></td>
+    <td><%= ticket.category %></td>
+    <td><%= ticket.date %></td>
+    <td><%= ticket.time %></td>
+    <td><%= ticket.place %></td>
+    <td><%= link_to 'Show', ticket %></td>
+    <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+    <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<br/>
+<%= debug params %>
+<%= link_to 'Back', tickets_path %>
